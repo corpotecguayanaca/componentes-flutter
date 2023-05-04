@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:componentes_flutter/src/providers/menu_provider.dart';
+import 'package:componentes_flutter/src/utils/icon_string_util.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -34,7 +35,7 @@ class HomePage extends StatelessWidget {
     for (dynamic element in data) {
       final widgetTemp = ListTile(
         title: Text(element['texto']),
-        leading: Icon(Icons.car_crash, color: Colors.indigo,),
+        leading: getIcon(element['icon']),
         trailing: Icon(Icons.keyboard_arrow_right, color: Colors.indigo,),
       );
       opciones..add(widgetTemp)
