@@ -38,15 +38,15 @@ class CardPage extends StatelessWidget {
                 "Este es el subtitulo de la tarjeta. Aqui deberia ir una descripcion de lo que sea que queramos poner en la tarjeta, puede ser cualquier cosa"),
           ),
           Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(5.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                ElevatedButton(onPressed: () {}, child: Text("Cancelar")),
+                TextButton(onPressed: () {}, child: Text("Cancelar")),
                 SizedBox(
                   width: 10,
                 ),
-                ElevatedButton(onPressed: () {}, child: Text("Ok")),
+                TextButton(onPressed: () {}, child: Text("Ok")),
               ],
             ),
           ),
