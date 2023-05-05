@@ -59,11 +59,7 @@ class _ListPageState extends State<ListPage> {
         itemBuilder: (context, index) {
           final imagen = _listaNumeros[index];
           print(index);
-          return FadeInImage(
-            placeholder: const AssetImage('assets/jar-loading.gif'),
-            image: NetworkImage("https://picsum.photos/500/300/?image=$imagen"),
-            // width: 500,
-          );
+          return _imageCard(imagen);
         },
       ),
     );
@@ -125,5 +121,42 @@ class _ListPageState extends State<ListPage> {
       _addTen();
      });
     return Future.delayed(duration);
+  }
+  
+  Widget _imageCard(int imagen) {
+    
+    final image = FadeInImage(
+        placeholder: const AssetImage('assets/jar-loading.gif'),
+        image: NetworkImage("https://picsum.photos/700/500/?image=$imagen"),
+        height: 300.0,
+        fit: BoxFit.cover,
+      );
+
+    final  card = Container(
+      margin: const EdgeInsets.all(10.0),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(30.0),
+        color: Colors.white,
+        boxShadow: const[
+          BoxShadow(
+            color: Colors.black26,
+            blurRadius: 10.0,
+            spreadRadius: 2.0,
+            offset: Offset(2.0, 10.0),
+          ),
+        ],
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(30.0),
+        child: image,
+      ),
+    );
+
+    return Column(
+      children: [
+        card,
+        const SizedBox(height: 15.0,),
+      ],
+    );    
   }
 }
