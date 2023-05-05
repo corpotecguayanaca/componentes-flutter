@@ -64,14 +64,6 @@ class _InputsPageState extends State<InputsPage> {
     );
   }
   
-  Widget _crearPersona() {
-    return ListTile(
-      title: Text("Nombre es $_nombre"),
-      subtitle: Text("Email: $_email"),
-      trailing: Text(_opcionSeleccionada),
-    );
-  }
-  
   Widget _crearEmail() {
     return TextField(
       keyboardType: TextInputType.emailAddress,
@@ -177,6 +169,14 @@ class _InputsPageState extends State<InputsPage> {
           ),
         ],
       ),
+    );
+  }
+
+   Widget _crearPersona() {
+    return ListTile(
+      title: Text("Nombre es $_nombre"),
+      subtitle: Text("Email: $_email"),
+      trailing: Text(_opcionSeleccionada),
     );
   }
 }
